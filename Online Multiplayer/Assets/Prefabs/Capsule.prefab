@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &134808025030440020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7587256481043817314}
+  m_Layer: 0
+  m_Name: LaserPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7587256481043817314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134808025030440020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.36, z: 1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4077510408923794889}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &486195014419092242
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +287,8 @@ GameObject:
   - component: {fileID: 7831202902776572851}
   - component: {fileID: 1805547742565861320}
   - component: {fileID: 1205664759221640418}
+  - component: {fileID: 6847812421384341246}
+  - component: {fileID: 6996283475890669968}
   - component: {fileID: 4558121178520070358}
   - component: {fileID: -2306023398861412398}
   m_Layer: 0
@@ -275,11 +308,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.26, y: 1.25, z: 38.82}
-  m_LocalScale: {x: 1.874861, y: 2.1442785, z: 1.874861}
+  m_LocalScale: {x: 2.926806, y: 3.347388, z: 2.926806}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7924480117488734783}
   - {fileID: 1903005638163261049}
+  - {fileID: 7587256481043817314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4188422189335449834
@@ -404,6 +438,41 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
+--- !u!114 &6847812421384341246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887945893822060194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844c61087e6887343922d51f158e08e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  health: 100
+--- !u!114 &6996283475890669968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887945893822060194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdaf0ab8c69f6c44096fb5342779bbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  laserPoint: {fileID: 7587256481043817314}
+  laserBeam: {fileID: 1594854135532105199, guid: cd12b6446afd88040adcba6ad0a9e3ae,
+    type: 3}
+  damage: 20
 --- !u!114 &4558121178520070358
 MonoBehaviour:
   m_ObjectHideFlags: 0
