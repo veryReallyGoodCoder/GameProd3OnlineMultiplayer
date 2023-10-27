@@ -1,4 +1,5 @@
 using Mirror;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChuckingScript : NetworkBehaviour
@@ -33,6 +34,23 @@ public class ChuckingScript : NetworkBehaviour
 
         Destroy(ball, 3);
         //Debug.Log("shoot");
+
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+
+        if (collision.gameObject.tag == "Player")
+        {
+            var playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+            if (playerHealth)
+            {
+                playerHealth.TakeDamage(damage);
+                Debug.Log("damage");
+            }
+        }
+
+    }
 }
