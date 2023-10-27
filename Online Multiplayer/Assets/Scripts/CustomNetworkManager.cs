@@ -6,6 +6,9 @@ public class CustomNetworkManager : NetworkManager
     public GameObject player1Prefab;
     public GameObject player2Prefab;
 
+    public GameObject player1SpawnPoint;
+    public GameObject player2SpawnPoint;
+
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
 
@@ -15,13 +18,13 @@ public class CustomNetworkManager : NetworkManager
 
         if(conn.connectionId == 0)
         {
-            playerInstance = Instantiate(player1Prefab, Vector3.zero, Quaternion.identity);
+            playerInstance = Instantiate(player1Prefab, player1SpawnPoint.transform.position, Quaternion.identity);
             Debug.Log(conn.connectionId);
         }
 
         else
         {
-            playerInstance = Instantiate(player2Prefab, Vector3.zero, Quaternion.identity);
+            playerInstance = Instantiate(player2Prefab, player2SpawnPoint.transform.position, Quaternion.identity);
         }
 
         NetworkServer.AddPlayerForConnection(conn, playerInstance);

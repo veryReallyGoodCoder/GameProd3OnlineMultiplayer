@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 1205664759221640418}
   - component: {fileID: 6847812421384341246}
   - component: {fileID: 6996283475890669968}
+  - component: {fileID: 8852405820894008242}
   - component: {fileID: 4558121178520070358}
   - component: {fileID: -2306023398861412398}
   m_Layer: 0
@@ -461,7 +462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8887945893822060194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdaf0ab8c69f6c44096fb5342779bbab, type: 3}
   m_Name: 
@@ -473,6 +474,26 @@ MonoBehaviour:
   laserBeam: {fileID: 1594854135532105199, guid: cd12b6446afd88040adcba6ad0a9e3ae,
     type: 3}
   damage: 20
+--- !u!114 &8852405820894008242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887945893822060194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9aebb9d0a3d7a4ca0eeb81da8db707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  throwingPoint: {fileID: 7587256481043817314}
+  ballPrefab: {fileID: 5991996217010156413, guid: 66410eb2601e8b244aeeb1f3f193d3a7,
+    type: 3}
+  damage: 20
+  throwForce: 50
 --- !u!114 &4558121178520070358
 MonoBehaviour:
   m_ObjectHideFlags: 0

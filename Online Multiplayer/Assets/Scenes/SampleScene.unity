@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -936,7 +936,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player1Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 8887945893822060194, guid: 7ce7167384b3d7a439c0dd4ba26da66a,
     type: 3}
-  autoCreatePlayer: 0
+  autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 8887945893822060194, guid: 689a4bb452f7a2c4490583b6fa292eb9, type: 3}
@@ -1153,6 +1153,8 @@ MonoBehaviour:
     type: 3}
   player2Prefab: {fileID: 8887945893822060194, guid: 689a4bb452f7a2c4490583b6fa292eb9,
     type: 3}
+  player1SpawnPoint: {fileID: 1214177939}
+  player2SpawnPoint: {fileID: 1901711601}
 --- !u!114 &1669472120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,9 +1179,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1901711602}
   m_Layer: 0
-  m_Name: Player1Spawn (1)
+  m_Name: Player2Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
