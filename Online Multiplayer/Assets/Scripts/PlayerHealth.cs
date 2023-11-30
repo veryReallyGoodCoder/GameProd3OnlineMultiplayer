@@ -14,10 +14,23 @@ public class PlayerHealth : NetworkBehaviour, IPickupable
 
     [SerializeField] private Slider healthBar;
 
-    /*private void FixedUpdate()
+    public Canvas canvas;
+
+    private void FixedUpdate()
     {
-        UpdateHealthBar();
-    }*/
+        if (!isLocalPlayer)
+        {
+            canvas.enabled = false;
+            return;
+        }
+        else
+        {
+            UpdateHealthBar();
+
+        }
+
+
+    }
 
     public void TakeDamage(int damage)
     {
