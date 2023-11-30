@@ -55,7 +55,7 @@ public class PlayerHealth : NetworkBehaviour, IPickupable
         //healthBar.value = health / 100;
         healthBar.normalizedValue = health / 100;
 
-        Debug.Log("healthbar update " + healthBar.value);
+        //Debug.Log("healthbar update " + healthBar.value);
     }
 
 
