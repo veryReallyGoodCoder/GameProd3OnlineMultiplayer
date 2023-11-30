@@ -481,7 +481,7 @@ MonoBehaviour:
   healthInc: 20
   healthBar: {fileID: 7631621804985665450}
   canvas: {fileID: 6623222888486168886}
-  manager: {fileID: 0}
+  manager: {fileID: 5054327507253606724, guid: aac3fb9a129bcb24cbc55cab40e970da, type: 3}
 --- !u!114 &6158936553359968856
 MonoBehaviour:
   m_ObjectHideFlags: 0

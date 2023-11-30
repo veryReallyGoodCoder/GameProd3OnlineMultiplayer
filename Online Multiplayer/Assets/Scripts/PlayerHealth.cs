@@ -2,7 +2,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
 
-public class PlayerHealth : NetworkBehaviour, IPickupable, IDamagable
+public class PlayerHealth : NetworkBehaviour, IPickupable
 {
 
     [SyncVar]
@@ -42,9 +42,17 @@ public class PlayerHealth : NetworkBehaviour, IPickupable, IDamagable
         if(health <= 0)
         {
             health = 0;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             Debug.Log("You Died");
+
+            CustomNetworkManager manager = new CustomNetworkManager();
+
+            StartCoroutine(manager.RespawnPlayer(this.gameObject));
+
         }
+
+        UpdateHealthBar();
+
     }
 
     public void OnPickup()
@@ -75,6 +83,7 @@ public class PlayerHealth : NetworkBehaviour, IPickupable, IDamagable
     public void UpdateHealthBar()
     {
         healthBar.normalizedValue = health / 100;
+        Debug.Log("healthbar update");
     }
 
 
