@@ -20,6 +20,8 @@ public class PlayerController : NetworkBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    public PlayerHealth playerHealth;
+
     void Start()
     {
 
@@ -82,5 +84,31 @@ public class PlayerController : NetworkBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+
+        //unlock mouse
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        playerHealth.UpdateHealthBar();
+
     }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        IPickupable item = other.GetComponent<IPickupable>();
+        if (item != null)
+        {
+            item.OnPickup(this);
+        }
+    }*/
+
 }

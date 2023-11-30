@@ -1,13 +1,23 @@
 using UnityEngine;
 using Mirror;
+using UnityEngine.UI;
 
-public class PlayerHealth : NetworkBehaviour
+public class PlayerHealth : NetworkBehaviour, IPickupable
 {
 
     [SyncVar]
-    public int health = 100;
+    public float health = 100;
 
     private int damage = 20;
+
+    [SerializeField] public int healthInc = 20;
+
+    [SerializeField] private Slider healthBar;
+
+    /*private void FixedUpdate()
+    {
+        UpdateHealthBar();
+    }*/
 
     public void TakeDamage(int damage)
     {
@@ -23,6 +33,32 @@ public class PlayerHealth : NetworkBehaviour
         }
     }
 
+    public void OnPickup()
+    {
+        if(health >= 100)
+        {
+            health = 100;
+        }
+        else
+        {
+            health += healthInc;
+        }
+
+        Debug.Log(health);
+
+    }
+
+    public void UpdateHealthBar()
+    {
+        //float currHealth = health;
+
+        //healthBar.value = health / 100;
+        healthBar.normalizedValue = health / 100;
+
+        Debug.Log("healthbar update " + healthBar.value);
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Ball")
@@ -30,5 +66,7 @@ public class PlayerHealth : NetworkBehaviour
             TakeDamage(damage);
         }
     }
+
+    
 
 }
