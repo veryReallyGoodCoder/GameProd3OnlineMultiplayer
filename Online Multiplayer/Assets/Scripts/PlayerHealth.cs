@@ -2,7 +2,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
 
-public class PlayerHealth : NetworkBehaviour, IPickupable
+public class PlayerHealth : NetworkBehaviour, IPickupable, IDamagable
 {
 
     [SyncVar]
@@ -16,6 +16,8 @@ public class PlayerHealth : NetworkBehaviour, IPickupable
 
     public Canvas canvas;
 
+    public CustomNetworkManager manager;
+
     private void FixedUpdate()
     {
         if (!isLocalPlayer)
@@ -26,7 +28,6 @@ public class PlayerHealth : NetworkBehaviour, IPickupable
         else
         {
             UpdateHealthBar();
-
         }
 
 
@@ -58,17 +59,22 @@ public class PlayerHealth : NetworkBehaviour, IPickupable
         }
 
         Debug.Log(health);
+    }
 
+    public void OnDamage()
+    {
+        health -= damage;
+
+        if(health <= 0)
+        {
+            StartCoroutine(manager.RespawnPlayer(this.gameObject));
+            Debug.Log("player respawn");
+        }
     }
 
     public void UpdateHealthBar()
     {
-        //float currHealth = health;
-
-        //healthBar.value = health / 100;
         healthBar.normalizedValue = health / 100;
-
-        //Debug.Log("healthbar update " + healthBar.value);
     }
 
 
@@ -79,7 +85,4 @@ public class PlayerHealth : NetworkBehaviour, IPickupable
             TakeDamage(damage);
         }
     }
-
-    
-
 }

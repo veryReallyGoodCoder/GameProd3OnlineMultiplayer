@@ -2641,13 +2641,12 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 8887945893822060194, guid: 9d59a7999f275094c840e728086bd39f,
+  playerPrefab: {fileID: 2873027792754894361, guid: e2ee0f114603e0a4f82cc45f9bf7fab0,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
-  - {fileID: 8887945893822060194, guid: 561115275525ee7439efd753c77d2138, type: 3}
-  - {fileID: 8887945893822060194, guid: 7ce7167384b3d7a439c0dd4ba26da66a, type: 3}
+  - {fileID: 2873027792754894361, guid: 73db9a5a18789664bb731126a70231d1, type: 3}
   snapshotSettings:
     bufferTimeMultiplier: 2
     bufferLimit: 32
@@ -2663,7 +2662,7 @@ MonoBehaviour:
   timeInterpolationGui: 0
   player1Prefab: {fileID: 8887945893822060194, guid: 9d59a7999f275094c840e728086bd39f,
     type: 3}
-  player2Prefab: {fileID: 8887945893822060194, guid: 561115275525ee7439efd753c77d2138,
+  player2Prefab: {fileID: 2873027792754894361, guid: 73db9a5a18789664bb731126a70231d1,
     type: 3}
   player1SpawnPoint: {fileID: 1214177939}
   player2SpawnPoint: {fileID: 1901711601}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Mirror;
+using System.Collections;
 
 public class CustomNetworkManager : NetworkManager
 {
@@ -29,4 +30,19 @@ public class CustomNetworkManager : NetworkManager
 
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
     }
+
+    [Server]
+    public IEnumerator RespawnPlayer(GameObject player)
+    {
+        NetworkServer.UnSpawn(player);
+
+        Transform sp = NetworkManager.singleton.GetStartPosition();
+        player.transform.position = sp.position;
+        player.transform.rotation = sp.rotation;
+
+        yield return new WaitForSeconds(1f);
+        NetworkServer.Spawn(player);
+
+    }
+
 }

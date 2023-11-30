@@ -98,7 +98,7 @@ public class PlayerController : NetworkBehaviour
             Cursor.visible = false;
         }
 
-        playerHealth.UpdateHealthBar();
+        //playerHealth.UpdateHealthBar();
 
     }
 
